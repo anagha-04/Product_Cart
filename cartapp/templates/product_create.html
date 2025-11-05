@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Add Form</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #a8edea, #fed6e3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #fff;
+            padding: 40px 50px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #333;
+            letter-spacing: 1px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: #444;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus {
+            border-color: #6a5acd;
+            outline: none;
+        }
+
+        button {
+            background-color: #6a5acd;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+            width: 100%;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #5b4ec4;
+            transform: scale(1.03);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>PRODUCT ADD FORM</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+            <label for="">Name</label>
+            <input type="text" name="name" placeholder="Enter product name"> 
+
+            <label for="">Price</label>
+            <input type="text" name="price" placeholder="Enter price">
+
+            <label for="">Stock</label>
+            <input type="text" name="stock" placeholder="Enter stock quantity">
+
+            <button type="submit">ADD PRODUCT</button>
+        </form>
+    </div>
+
+</body>
+</html>
