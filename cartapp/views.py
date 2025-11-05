@@ -36,7 +36,7 @@ class Product_create_View(View):
 
         form = ProductForm
 
-        return render(request,"product_create.html",{"form":form})
+        return redirect("list")
     
 
 class Product_List_View(View):
@@ -70,6 +70,21 @@ class Product_delete_view(View):
         product.delete()  # Delete that one
         
         return redirect("list")
+    
+
+class Cart_add_view(View):
+
+    def get(self,request,**kwargs):
+
+        id = kwargs.get("pk")
+
+        product = ProductModel.objects.get(id = id)
+
+        CartModel.objects.create(product=product,quantity =1)
+
+        return redirect("list")
+    
+    
 
 
 
